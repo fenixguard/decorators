@@ -10,9 +10,10 @@ def logger(function):
         with open("log.txt", mode="a", encoding="utf8") as ff:
             current_time = datetime.now()
             function_name = function.__name__
+            function_doc = function.__doc__
             ff.write(f"Время запуска функции:\t {current_time}\n"
                      f"Название функции:\t {function_name}\n"
-                     f"Документация функции:\t {function.__doc__}\n"
+                     f"Документация функции:\t {function_doc}\n"
                      f"Аргументы:\n"
                      f"\targs: \t\t{args}\n"
                      f"\tkwargs: \t{kwargs}\n"
@@ -34,9 +35,10 @@ def params_logger(path):
             with open(path, mode="a", encoding="utf8") as ff:
                 current_time = datetime.now()
                 function_name = function.__name__
+                function_doc = function.__doc__
                 ff.write(f"Время запуска функции:\t {current_time}\n"
                          f"Название функции:\t {function_name}\n"
-                         f"Документация функции:\t {function.__doc__}\n"
+                         f"Документация функции:\t {function_doc}\n"
                          f"Аргументы:\n"
                          f"\targs: \t\t{args}\n"
                          f"\tkwargs: \t{kwargs}\n"
